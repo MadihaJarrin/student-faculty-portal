@@ -5,6 +5,7 @@ import education from '../../../images/management.png'
 import AppointmentBanner from '../AppoinmentBanner/AppointmentBanner';
 import Banner from '../Banner/Banner';
 import About from '../../About/About';
+import Programs from '../../Faculty/Programs/Programs';
 
 const Home = () => {
     return (
@@ -13,6 +14,7 @@ const Home = () => {
             <Banner></Banner>
             <Services></Services>
             <About></About>
+            <Programs></Programs>
             <AppointmentBanner></AppointmentBanner>
         </div>
     );

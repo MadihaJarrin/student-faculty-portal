@@ -4,6 +4,7 @@ import Grid from '@mui/material/Grid';
 import faculty from '../../../images/faculty.png';
 import appBackground from '../../../images/AppointmentBackground.jpeg';
 import { Button, Typography } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 const appBg = {
     background: `url(${appBackground})`,
@@ -34,7 +35,8 @@ const AppointmentBanner = () => {
                         <Typography variant='h6' style={{ color: 'white', fontSize: 16, fontWeight: 300 }}>
                             if you have any queries or need any kind help, please make an appointment now.
                         </Typography>
-                        <Button sx={{ mt: 4 }} style={{ backgroundColor: '#BF970F' }} variant="contained"> Learn more</Button>
+                        <Link to="/appointment">
+                            <Button sx={{ mt: 4 }} style={{ backgroundColor: '#BF970F' }} variant="contained"> Appointment</Button></Link>
                     </Box>
                 </Grid>
 
