@@ -36,7 +36,7 @@ const About = () => {
                             borderWidth: '8px',
                             borderBottomStyle: 'double', borderColor: '#EEAA2A',
                             marginTop: 20,
-                            marginBottom: 20
+                            marginBottom: 20, width: 250
                         }}>
 
                         </Typography>
