@@ -30,13 +30,13 @@ const AppointmentBanner = () => {
                 }}>
                     <Box>
                         <Typography variant='h4' sx={{ mb: 3 }} style={{ color: 'white' }}>
-                            Book an Appointment
+                            Book an Enrollment
                         </Typography>
                         <Typography variant='h6' style={{ color: 'white', fontSize: 16, fontWeight: 300 }}>
-                            if you have any queries or need any kind help, please make an appointment now.
+                            if you have any queries or need any kind help, please make an enrollment now.
                         </Typography>
-                        <Link to="/appointment">
-                            <Button sx={{ mt: 4 }} style={{ backgroundColor: '#BF970F' }} variant="contained"> Appointment</Button></Link>
+                        <Link to="/appointment" style={{ textDecoration: 'none' }}>
+                            <Button sx={{ mt: 4 }} style={{ backgroundColor: '#BF970F' }} variant="contained"> Enrollment</Button></Link>
                     </Box>
                 </Grid>
 

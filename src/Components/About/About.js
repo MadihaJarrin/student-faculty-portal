@@ -55,7 +55,7 @@ const About = () => {
                             sx={{ borderRight: 1, }}
                             style={{
                                 width: 450, height: 500,
-                                borderRightStyle: 'solid', borderBottomStyle: 'solid', borderWidth: '10px', borderColor: 'yellow'
+                                borderRightStyle: 'solid', borderTopStyle: 'solid', borderWidth: '20px', borderColor: 'yellow'
                             }}
                             src={campus} alt='' />
                     </Typography>

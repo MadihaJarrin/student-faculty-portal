@@ -2,7 +2,7 @@ import React from 'react';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import { Container, Typography } from '@mui/material';
-import SvgIcon from '@mui/material/SvgIcon';
+import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import vision1 from '../../../images/vision/vision1.jpeg';
@@ -17,9 +17,9 @@ import Service from '../../Home/Service/Service';
 
 function HomeIcon(props) {
     return (
-        <SvgIcon {...props}>
+        <RemoveRedEyeIcon {...props}>
             <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
-        </SvgIcon>
+        </RemoveRedEyeIcon>
     );
 }
 

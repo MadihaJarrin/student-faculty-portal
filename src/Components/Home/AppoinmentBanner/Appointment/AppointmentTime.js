@@ -49,7 +49,7 @@ const slots = [
 const AppointmentTime = ({ date }) => {
     return (
         <Container>
-            <h2> {date.toDateString()}</h2>
+            <h2> Enrollment on {date.toDateString()}</h2>
             <Box sx={{ flexGrow: 1 }}>
 
                 <Grid container spacing={2}>
