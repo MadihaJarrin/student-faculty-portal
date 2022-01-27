@@ -4,7 +4,7 @@ import loginBg from '../../../images/Login/login3.jpg';
 import SendIcon from '@mui/icons-material/Send';
 import Navigation from '../../Shared/Navigation/Navigation'
 import { Box } from '@mui/system';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import useAuth from '../../../Hooks/useAuth';
 
 
@@ -12,6 +12,8 @@ const Login = () => {
 
     const [loginData, setLoginData] = useState({});
     const { user, loginUser, isLoading, authError } = useAuth();
+    const location = useLocation();
+    const history = useNavigate();
 
     const handleOnChange = e => {
         const field = e.target.name;
@@ -24,7 +26,7 @@ const Login = () => {
     }
 
     const handleLoginSubmit = e => {
-        loginUser(loginData.email, loginData.password);
+        loginUser(loginData.email, loginData.password, location, history);
         e.preventDefault();
     }
     return (
