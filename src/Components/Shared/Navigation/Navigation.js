@@ -8,43 +8,79 @@ import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Link, NavLink } from 'react-router-dom';
 import useAuth from '../../../Hooks/useAuth';
+import { Container } from '@mui/material';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+
+
+
+const darkTheme = createTheme({
+    palette: {
+        mode: 'dark',
+        primary: {
+            main: '#121212',
+        },
+    },
+});
 
 const Navigation = () => {
     const { user, logout } = useAuth();
 
     return (
         <Box sx={{ flexGrow: 1 }}>
-            <AppBar position="static">
-                <Toolbar>
-                    <IconButton
-                        size="large"
-                        edge="start"
-                        color="inherit"
-                        aria-label="menu"
-                        sx={{ mr: 2 }}
-                    >
-                        <MenuIcon />
-                    </IconButton>
-                    <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                        Students & Faculty Portal
-                    </Typography>
-                    <NavLink style={{ textDecoration: 'none', color: 'white' }} to="/appointment">
-                        <Button variant="inherit"> Appointment</Button></NavLink>
-                    <NavLink style={{ textDecoration: 'none', color: 'white' }} to="/register" target='blank' >
-                        <Button color="inherit">Register</Button>
-                    </NavLink>
-                    {user?.email ?
+            <ThemeProvider theme={darkTheme}>
+                <AppBar position="static" sx={{ p: 1 }}>
+                    <Toolbar>
+                        <IconButton
+                            size="large"
+                            edge="start"
+                            color="inherit"
+                            aria-label="menu"
+                            sx={{ mr: 2 }}
+                        >
+                            <MenuIcon />
+                        </IconButton>
+                        <Typography sx={{ flexGrow: 0 }} variant="h6" component="div" >
+                            Students & Faculty Portal
 
-                        <Button onClick={logout} style={{ textDecoration: 'none' }} color="inherit">Logout</Button>
+                        </Typography>
 
-                        :
-                        <NavLink style={{ textDecoration: 'none', color: 'white' }} to="/login" target='blank' >
-                            <Button color="inherit">Login</Button>
-                        </NavLink>
+                        <Typography sx={{ flexGrow: 1 }}>
 
-                    }
-                </Toolbar>
-            </AppBar>
+                            <NavLink style={{ textDecoration: 'none', color: 'white' }} to="/Home" target='blank' >
+                                <Button color="inherit">Home</Button>
+                            </NavLink>
+                            <NavLink style={{ textDecoration: 'none', color: 'white' }} to="/teaching" target='blank' >
+                                <Button color="inherit">Teaching</Button>
+                            </NavLink>
+                            <NavLink style={{ textDecoration: 'none', color: 'white' }} to="/appointment" target='blank'>
+                                <Button variant="inherit"> Enrollment</Button></NavLink>
+
+                            <NavLink style={{ textDecoration: 'none', color: 'white' }} to="/about" target='blank'>
+                                <Button variant="inherit"> About </Button></NavLink>
+
+                        </Typography>
+                        <Typography>
+                            <NavLink style={{ textDecoration: 'none', color: 'white' }} to="/register" target='blank' >
+                                <Button color="inherit">Register</Button>
+                            </NavLink>
+
+
+                            {user?.email ?
+                                <Button onClick={logout} style={{ textDecoration: 'none' }} color="inherit">Logout</Button>
+
+                                :
+
+                                <NavLink style={{ textDecoration: 'none', color: 'white' }} to="/login" target='blank' >
+                                    <Button color="inherit">Login</Button>
+                                </NavLink>
+
+
+
+                            }
+                        </Typography>
+                    </Toolbar>
+                </AppBar>
+            </ThemeProvider>
         </Box>
     );
 };

@@ -7,6 +7,9 @@ import Appointment from './Components/Home/AppoinmentBanner/Appointment/Appointm
 import Login from './Components/Login/Login/Login';
 import Register from './Components/Login/Registration/Register';
 import AuthProvider from './Context/AuthProvider/AuthProvider';
+import Teaching from './Components/Teaching/Teaching';
+import About from './Components/About/About';
+import AboutSec from './Components/About/AboutSec';
 
 function App() {
   return (
@@ -18,6 +21,8 @@ function App() {
           <Route path="/appointment" element={<Appointment />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/teaching" element={<Teaching />} />
+          <Route path="/about" element={<AboutSec />} />
         </Routes>
       </AuthProvider>
     </div>
