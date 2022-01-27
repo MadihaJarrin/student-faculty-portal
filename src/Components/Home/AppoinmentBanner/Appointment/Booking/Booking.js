@@ -26,22 +26,22 @@ const Booking = ({ slot, date }) => {
 
     return (
         <>
-            <Grid item xs={12} sm={6} md={4}>
-                <Paper elevation={3} sx={{ py: 4 }}>
+            <Grid item xs={12} sm={6} md={4} sx={{ py: 4 }} >
+                {/* <Paper elevation={3} sx={{ py: 4 }}> */}
 
-                    <Typography variant="h5" gutterBottom component="div">
-                        {name}
-                    </Typography>
-                    <Typography variant="h6" gutterBottom component="div" >
-                        {time}
-                    </Typography >
-                    <Typography gutterBottom >
-                        {space} sits available
-                    </Typography>
-                    <Button onClick={handleFormOpen} color="success" variant='contained'  >
-                        Form
-                    </Button>
-                </Paper>
+                <Typography variant="h5" gutterBottom component="div">
+                    {name}
+                </Typography>
+                <Typography variant="h6" gutterBottom component="div" >
+                    {time}
+                </Typography >
+                <Typography gutterBottom >
+                    {space} sits available
+                </Typography>
+                <Button onClick={handleFormOpen} style={{ background: '#E78C2B' }} variant='contained'  >
+                    Form
+                </Button>
+                {/* </Paper> */}
             </Grid>
             <Form
                 slot={slot}

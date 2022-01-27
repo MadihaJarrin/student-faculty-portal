@@ -2,8 +2,17 @@ import React from 'react';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
-import { Container } from '@mui/material';
+import { Container, Typography } from '@mui/material';
 import Booking from './Booking/Booking';
+import AccessAlarmsIcon from '@mui/icons-material/AccessAlarms';
+
+function HomeIcon(props) {
+    return (
+        <AccessAlarmsIcon {...props}>
+            <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+        </AccessAlarmsIcon>
+    );
+}
 
 const slots = [
     {
@@ -49,10 +58,10 @@ const slots = [
 const AppointmentTime = ({ date }) => {
     return (
         <Container>
-            <h2> Enrollment on {date.toDateString()}</h2>
+            <Typography style={{ fontSize: 30, fontFamily: 'sans-serif', fontWeight: '600', marginBottom: 50 }} sx={{ py: 5 }}> <HomeIcon fontSize="large" color="warning" />  Enrollment on {date.toDateString()}</Typography>
             <Box sx={{ flexGrow: 1 }}>
 
-                <Grid container spacing={2}>
+                <Grid container spacing={8}>
                     {
                         slots.map(slot => <Booking
                             key={slots.id}
