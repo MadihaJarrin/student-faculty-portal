@@ -15,14 +15,17 @@ import PrivateRoute from './Components/Login/Login/PrivateRoute/PrivateRoute';
 function App() {
   return (
     <div className="App">
+      {/* <h2>Hello</h2> */}
       <AuthProvider>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
           <Route path="/appointment" element={<Appointment />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
+          <Route path="/register" element={<Register />} />.
+
           <Route path="/teaching" element={<Teaching />} />
+
           <Route path="/about" element={<AboutSec />} />
         </Routes>
       </AuthProvider>

@@ -36,5 +36,12 @@ step-4 (AuthProvider.js)
 5. create useAuth Hook (useFirebase)
 
 
+step-5 (Create private route)
+1. create private route
+2. set private route
+
+step-6 (redirect after login)
+1. after login redirect user to their desire destination
+
 */
 

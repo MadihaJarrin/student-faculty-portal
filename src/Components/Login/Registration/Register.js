@@ -4,16 +4,16 @@ import loginBg from '../../../images/Login/login3.jpg';
 import SendIcon from '@mui/icons-material/Send';
 import Navigation from '../../Shared/Navigation/Navigation'
 import { Box } from '@mui/system';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import useAuth from '../../../Hooks/useAuth';
 
 const Register = () => {
 
     const [loginData, setLoginData] = useState({});
     const { user, registerUser, isLoading, authError } = useAuth();
+const history = useNavigate();
 
-
-    const handleOnChange = e => {
+    const handleOnBlur = e => {
         const field = e.target.name;
         const value = e.target.value;
         // console.log(field, value)
@@ -28,7 +28,7 @@ const Register = () => {
             alert("Your password didn't match");
             return;
         }
-        registerUser(loginData.email, loginData.password);
+        registerUser(loginData.email, loginData.password,loginData.name, history);
         e.preventDefault();
     }
     return (
@@ -43,20 +43,25 @@ const Register = () => {
 
                         {!isLoading && <form onSubmit={handleLoginSubmit}>
 
+                            <TextField focused sx={{ width: '90%', m: 1 }} label="Your Name"
+                                name="name"
+                                onBlur={handleOnBlur}
+                                color="success" size="small"
+                            />
                             <TextField focused sx={{ width: '90%', m: 1 }} label="Your E-mail"
                                 name="email"
-                                onChange={handleOnChange}
+                                onBlur={handleOnBlur}
                                 color="success" size="small"
                             />
                             <TextField sx={{ width: '90%', m: 1 }} label="Your Password"
                                 type='password'
                                 name="password"
-                                onChange={handleOnChange}
+                                onBlur={handleOnBlur}
                                 color="success" size="small" focused />
                             <TextField sx={{ width: '90%', m: 1 }} label="Confirm Password"
                                 type='password'
                                 name="password2"
-                                onChange={handleOnChange}
+                                onBlur={handleOnBlur}
                                 color="success" size="small" focused />
 
                             <Button type='submit' color="success" variant="contained" endIcon={<SendIcon />}>

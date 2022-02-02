@@ -7,6 +7,7 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { Fade, TextField } from '@mui/material';
 import SendIcon from '@mui/icons-material/Send';
+import useAuth from '../../../../../../Hooks/useAuth';
 
 const style = {
     position: 'absolute',
@@ -22,6 +23,7 @@ const style = {
 
 const Form = ({ openForm, handleFormClose, slot, date }) => {
     const { name, time, space } = slot;
+    const {user} = useAuth();
 
     const handleFormSend = e => {
         alert('submit successful');
@@ -51,8 +53,15 @@ const Form = ({ openForm, handleFormClose, slot, date }) => {
                     <form onSubmit={handleFormSend}>
                         <TextField disabled sx={{ width: '90%', m: 1 }} label="Time" color="secondary" size="small"
                             defaultValue={time} />
-                        <TextField sx={{ width: '90%', m: 1 }} label="Your Name" color="secondary" size="small" focused />
-                        <TextField sx={{ width: '90%', m: 1 }} label="Your E-mail" color="secondary" size="small" focused />
+                        <TextField sx={{ width: '90%', m: 1 }} 
+                        label="Your Name" 
+                        defaultValue={user.displayName}
+                        color="secondary" 
+                        size="small" focused />
+                        <TextField sx={{ width: '90%', m: 1 }} label="Your E-mail" 
+                           defaultValue={user.email}
+
+                        color="secondary" size="small" disabled />
                         <TextField sx={{ width: '90%', m: 1 }} label="Your Phone Number" color="secondary" size="small" focused />
                         <TextField disabled sx={{ width: '90%', m: 1 }} label="Date" color="secondary" size="small"
                             defaultValue={date.toDateString()} />
