@@ -1,13 +1,14 @@
 import { Button, Grid, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import React from 'react';
+import { Link } from 'react-router-dom';
 import bannerBg from '../../images/Teaching/banner.jpeg';
 import bannerStudent from '../../images/Teaching/bannerPhoto1.png';
 
 
 const banner = {
     background: `url(${bannerBg})`,
-    backgroundColor: 'rgba(31, 183, 168, 0.5)',
+    backgroundColor: 'rgba(31, 183, 168, 0.8)',
     backgroundBlendMode: 'darken, luminosity',
     marginBottom: 150,
 
@@ -31,12 +32,12 @@ const TeachingBanner = () => {
                             your future<br />
                             of learning
                         </Typography>
-                        <Typography sx={{ fontStyle: 'oblique', fontSize: 26, mb: 3 }} style={{ color: '#E7BB34' }}>
+                        <Typography sx={{ fontStyle: 'oblique', fontSize: 26, mb: 3 }} style={{ color: '#8710A2' }}>
                             <br />
-                            “Live as if you were to die tomorrow. Learn as if you were to live forever”
+                            “A good teacher is like a candle—it consumes itself to light the way for others.”
 
                         </Typography>
-                        <Button size="large" color="error" variant="contained">LEARN MORE</Button>
+                        <Button size="large" color="warning" variant="contained">LEARN MORE</Button>
                     </Box>
                 </Grid>
                 <Grid item xs={12} md={6}>

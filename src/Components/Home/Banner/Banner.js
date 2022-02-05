@@ -33,7 +33,7 @@ const Banner = () => {
                             your future<br />
                             of learning
                         </Typography>
-                        <Typography sx={{ fontStyle: 'oblique', fontSize: 26, mb: 3 }} style={{ color: '#E7BB34' }}>
+                        <Typography sx={{ fontStyle: 'oblique', fontSize: 26, mb: 3 }} style={{ color: '#E6CC07' }}>
                             <br />
                             “Live as if you were to die tomorrow. Learn as if you were to live forever”
 

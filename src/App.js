@@ -11,6 +11,7 @@ import Teaching from './Components/Teaching/Teaching';
 import About from './Components/About/About';
 import AboutSec from './Components/About/AboutSec';
 import PrivateRoute from './Components/Login/Login/PrivateRoute/PrivateRoute';
+import Footer from './Components/Home/Footer/Footer';
 
 function App() {
   return (

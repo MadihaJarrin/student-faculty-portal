@@ -9,6 +9,7 @@ import { Link } from 'react-router-dom';
 const appBg = {
     background: `url(${appBackground})`,
     marginTop: 220,
+    // marginBottom: 220,
     backgroundColor: ' rgba(20, 88, 100, 0.8)',
     backgroundBlendMode: 'darken, luminosity'
 }
@@ -20,7 +21,7 @@ const AppointmentBanner = () => {
 
                 <Grid item xs={12} md={6}>
                     <img
-                        style={{ width: 300, marginTop: -140 }}
+                        style={{ width: 400, marginTop: -140 }}
                         src={faculty} alt=" " />
                 </Grid>
 
