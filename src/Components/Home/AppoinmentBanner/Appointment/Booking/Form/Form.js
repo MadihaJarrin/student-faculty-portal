@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import Backdrop from '@mui/material/Backdrop';
 import Box from '@mui/material/Box';
@@ -23,12 +23,45 @@ const style = {
 
 const Form = ({ openForm, handleFormClose, slot, date }) => {
     const { name, time, space } = slot;
-    const {user} = useAuth();
+    const { user } = useAuth();
+
+    const initialInfo = { StudentName: user.displayName, email: user.email, phone: '' }
+    const [bookingInfo, setBookingInfo] = useState(initialInfo);
+
+    const handleOnBlur = (e) => {
+        const field = e.target.name;
+        const value = e.target.value;
+        const newInfo = { ...bookingInfo };
+        newInfo[field] = value;
+        console.log(newInfo);
+        setBookingInfo(newInfo);
+
+    }
 
     const handleFormSend = e => {
-        alert('submit successful');
+        // alert('submit successful');
+
         //Collect data
+        const enrollment = {
+            ...bookingInfo,
+            time,
+            serviceName: name,
+            date: date.toLocalDateString()
+
+        }
         //send to the server
+        // console.log(enrollment);
+        fetch('http://localhost:5000/enrollment', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(enrollment)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+            })
         handleFormClose();
         e.preventDefault();
     }
@@ -51,18 +84,32 @@ const Form = ({ openForm, handleFormClose, slot, date }) => {
                     </Typography>
 
                     <form onSubmit={handleFormSend}>
-                        <TextField disabled sx={{ width: '90%', m: 1 }} label="Time" color="secondary" size="small"
+                        <TextField disabled
+                            sx={{ width: '90%', m: 1 }}
+                            label="Time"
+                            color="secondary"
+                            size="small"
                             defaultValue={time} />
-                        <TextField sx={{ width: '90%', m: 1 }} 
-                        label="Your Name" 
-                        defaultValue={user.displayName}
-                        color="secondary" 
-                        size="small" focused />
-                        <TextField sx={{ width: '90%', m: 1 }} label="Your E-mail" 
-                           defaultValue={user.email}
-
-                        color="secondary" size="small" disabled />
-                        <TextField sx={{ width: '90%', m: 1 }} label="Your Phone Number" color="secondary" size="small" focused />
+                        <TextField sx={{ width: '90%', m: 1 }}
+                            label="Student Name"
+                            // name='StudentName'
+                            defaultValue={user.displayName}
+                            onBlur={handleOnBlur}
+                            color="secondary"
+                            size="small" focused />
+                        <TextField sx={{ width: '90%', m: 1 }}
+                            label="Student E-mail"
+                            // name="StudentEmail"
+                            defaultValue={user.email}
+                            onBlur={handleOnBlur}
+                            color="secondary"
+                            size="small" focused />
+                        <TextField sx={{ width: '90%', m: 1 }}
+                            label="Student Phone Number"
+                            // name='studentPhone'
+                            onBlur={handleOnBlur}
+                            color="secondary"
+                            size="small" focused />
                         <TextField disabled sx={{ width: '90%', m: 1 }} label="Date" color="secondary" size="small"
                             defaultValue={date.toDateString()} />
                         <Button type='submit' color="secondary" variant="contained" endIcon={<SendIcon />}>

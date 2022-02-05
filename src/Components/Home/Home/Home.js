@@ -8,6 +8,7 @@ import About from '../../About/About';
 import Programs from '../../Faculty/Programs/Programs';
 import Vision from '../../Vision/Vision/Vision';
 import Testimonial from '../../Vision/Testimonial/Testimonial';
+import Footer from '../Footer/Footer';
 
 const Home = () => {
     return (
@@ -20,6 +21,7 @@ const Home = () => {
             <Vision></Vision>
             <Testimonial></Testimonial>
             <AppointmentBanner></AppointmentBanner>
+            <Footer></Footer>
         </div>
     );
 };

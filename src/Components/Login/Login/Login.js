@@ -30,7 +30,7 @@ const Login = () => {
         e.preventDefault();
     }
 
-    const handleGoogleSignIn = () =>{
+    const handleGoogleSignIn = () => {
         signInWithGoogle(location, history)
     }
     return (
@@ -73,8 +73,8 @@ const Login = () => {
 
                         <p>Or</p>
                         <Button onClick={handleGoogleSignIn} type='submit' color="success" variant="contained" endIcon={<SendIcon />}>
-                                Sign in With Google
-                            </Button>
+                            Sign in With Google
+                        </Button>
 
                     </Grid>
                     <Grid item xs={12} sm={6} md={6}>
