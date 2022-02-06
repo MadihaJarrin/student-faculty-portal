@@ -16,7 +16,7 @@ function HomeIcon(props) {
 
 const About = () => {
     return (
-        <Box sx={{ flexGrow: 1, mt: 10 }}>
+        <Box sx={{ flexGrow: 1, mt: 10, mb: 20 }}>
             <Grid container spacing={2}>
                 <Grid item xs={6} md={6}
                     sx={{

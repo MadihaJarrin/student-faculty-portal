@@ -1,11 +1,12 @@
 import { Button, Container, Grid, TextField, Typography, CircularProgress, Alert } from '@mui/material';
 import React, { useState } from 'react';
-import loginBg from '../../../images/Login/login3.jpg';
+import loginBg from '../../../images/Login/logop.png';
 import SendIcon from '@mui/icons-material/Send';
 import Navigation from '../../Shared/Navigation/Navigation'
 import { Box } from '@mui/system';
 import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import useAuth from '../../../Hooks/useAuth';
+import Footer from '../../Home/Footer/Footer';
 
 
 const Login = () => {
@@ -34,7 +35,7 @@ const Login = () => {
         signInWithGoogle(location, history)
     }
     return (
-        <Box >
+        <Box style={{ background: '#F5F6C3' }} >
             <Navigation></Navigation>
             <Container style={{ marginTop: 100 }}>
                 <Grid container spacing={2}>
@@ -72,7 +73,7 @@ const Login = () => {
                         </form>
 
                         <p>Or</p>
-                        <Button onClick={handleGoogleSignIn} type='submit' color="success" variant="contained" endIcon={<SendIcon />}>
+                        <Button style={{ marginBottom: 200 }} onClick={handleGoogleSignIn} type='submit' color="success" variant="contained" endIcon={<SendIcon />}>
                             Sign in With Google
                         </Button>
 
@@ -85,6 +86,7 @@ const Login = () => {
                 </Grid>
 
             </Container>
+            <Footer></Footer>
         </Box>
     );
 };

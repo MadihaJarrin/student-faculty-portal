@@ -4,6 +4,7 @@ import React from 'react';
 import Courses from './Courses';
 import Navigation from '../Shared/Navigation/Navigation'
 import TeachingBanner from './TeachingBanner';
+import Footer from '../Home/Footer/Footer';
 
 const teachingCourses = [
     {
@@ -54,7 +55,7 @@ const Teaching = () => {
         <>
             <Navigation></Navigation>
             <TeachingBanner></TeachingBanner>
-            <Container>
+            <Container style={{ marginBottom: 200 }}>
                 <Box sx={{ flexGrow: 1 }}>
 
                     <Grid container spacing={2}>
@@ -68,7 +69,9 @@ const Teaching = () => {
                     </Grid>
                 </Box>
 
-            </Container></>
+            </Container>
+            <Footer></Footer>
+        </>
     );
 };
 

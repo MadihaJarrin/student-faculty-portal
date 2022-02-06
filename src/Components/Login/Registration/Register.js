@@ -1,17 +1,18 @@
 import { Button, CircularProgress, Container, Grid, TextField, Typography, Alert } from '@mui/material';
 import React, { useState } from 'react';
-import loginBg from '../../../images/Login/login3.jpg';
+import loginBg from '../../../images/Login/registration.png';
 import SendIcon from '@mui/icons-material/Send';
 import Navigation from '../../Shared/Navigation/Navigation'
 import { Box } from '@mui/system';
 import { NavLink, useNavigate } from 'react-router-dom';
 import useAuth from '../../../Hooks/useAuth';
+import Footer from '../../Home/Footer/Footer';
 
 const Register = () => {
 
     const [loginData, setLoginData] = useState({});
     const { user, registerUser, isLoading, authError } = useAuth();
-const history = useNavigate();
+    const history = useNavigate();
 
     const handleOnBlur = e => {
         const field = e.target.name;
@@ -28,13 +29,13 @@ const history = useNavigate();
             alert("Your password didn't match");
             return;
         }
-        registerUser(loginData.email, loginData.password,loginData.name, history);
+        registerUser(loginData.email, loginData.password, loginData.name, history);
         e.preventDefault();
     }
     return (
-        <Box>
+        <Box style={{ background: '#BFECE6' }}>
             <Navigation></Navigation>
-            <Container style={{ marginTop: 100 }}>
+            <Container style={{ marginTop: 100, }}>
                 <Grid container spacing={2}>
                     <Grid item xs={12} sm={6} md={6} style={{ marginTop: 90 }} >
                         <Typography variant="body1">
@@ -67,7 +68,7 @@ const history = useNavigate();
                             <Button type='submit' color="success" variant="contained" endIcon={<SendIcon />}>
                                 Register
                             </Button> <br></br>
-                            <NavLink style={{ textDecoration: 'none' }} to="/login"> <Button variant='text'>
+                            <NavLink style={{ textDecoration: 'none' }} to="/login"> <Button style={{ marginBottom: 200 }} variant='text'>
                                 <br></br>
                                 Already registered ? Plaease Login</Button> </NavLink>
                         </form>}
@@ -80,12 +81,13 @@ const history = useNavigate();
                     </Grid>
                     <Grid item xs={12} sm={6} md={6}>
                         <img
-                            style={{ width: '100%' }}
+                            // style={{ width: '100%' }}
                             src={loginBg} alt='' />
                     </Grid>
                 </Grid>
 
             </Container>
+            <Footer></Footer>
         </Box>
     );
 };

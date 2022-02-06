@@ -40,7 +40,7 @@ const Navigation = () => {
                             <MenuIcon />
                         </IconButton>
                         <Typography sx={{ flexGrow: 0 }} variant="h6" component="div" >
-                            Students & Faculty Portal
+                            CSE DEPERTMENT
 
                         </Typography>
 

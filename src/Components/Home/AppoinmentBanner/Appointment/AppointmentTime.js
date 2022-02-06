@@ -57,7 +57,7 @@ const slots = [
 
 const AppointmentTime = ({ date }) => {
     return (
-        <Container>
+        <Container style={{ marginBottom: 150 }}>
             <Typography style={{ fontSize: 30, fontFamily: 'sans-serif', fontWeight: '600', marginBottom: 50 }} sx={{ py: 5 }}> <HomeIcon fontSize="large" color="warning" />  Enrollment on {date.toDateString()}</Typography>
             <Box sx={{ flexGrow: 1 }}>
 
